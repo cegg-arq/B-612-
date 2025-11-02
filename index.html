@@ -4,8 +4,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>B-612°</title>
+    <link rel="stylesheet" href="./styles/style.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
   
   </head>
 
@@ -15,92 +18,376 @@
   <!-- AQUI INICIA EL HEADER + NAV ----------------------->
 
   <header>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow-sm">
       <div class="container">
-        <a class="navbar-brand fw-bold" href="./index.html">B-612°</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <!-- LOGO -->
+        <a class="navbar-brand d-flex align-items-center" href="#inicio">
+          <img src="/assets/images/Logotipo_Blanco.png" alt="Logo Burger" width="45" height="45" class="me-2 rounded-circle">
+          <span class="fw-bold">B-612°</span>
+        </a>
+
+        <!-- BOTÓN RESPONSIVE (menú hamburguesa) -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
 
+        <!-- ENLACES DEL MENÚ -->
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-          <ul class="navbar-nav">
-            <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
-            <li class="nav-item"><a class="nav-link" href="about.html">Nosotros</a></li>
-            <li class="nav-item"><a class="nav-link" href="product.html">Universo</a></li>
-            <li class="nav-item"><a class="nav-link" href="process.html">Blog</a></li>
-            <li class="nav-item"><a class="nav-link" href="contact.html">Contacto</a></li>
+          <ul class="navbar-nav align-items-lg-center">
+            <li class="nav-item">
+              <a class="nav-link active" href="#inicio">Inicio</a>
+            <li class="nav-item">
+              <a class="nav-link" href="#destacado">Destacado</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#menu">Menú</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#experiencia">Experiencia</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contacto">Contacto</a>
+            </li>
           </ul>
+          <a href="#pedido" class="btn btn-warning ms-lg-3 fw-bold">Pide Aquí</a>
         </div>
       </div>
     </nav>
   </header>
 
-  <!-- HERO -->
-  <section class="hero bg-dark text-light text-center py-5">
+    <!-- HERO PRINCIPAL -->
+  <section id="inicio" class="hero d-flex align-items-center text-center text-dark">
     <div class="container">
-      <h1 class="display-4 fw-bold">B-612°</h1>
-      <p class="lead">Cocina oculta, Sabor visible.</p>
-      <a href="product.html" class="btn btn-outline-light mt-3">Descubrir más</a>
+      <h1 class="display-1 fw-bold mb-3">B-612°</h1>
+      <p class="lead fs-3 mb-4">Cocina oculta, sabor visible</p>
+      <a href="#menu" class="btn btn-dark btn-lg fw-bold px-5 py-3">Descubre el sabor</a>
     </div>
   </section>
 
-  <!-- AQUI VA LA SECCIÓN DE CARRUSEL -->
+  <!-- AQUI VA LA SECCIÓN DE CARRUSEL ------------------------------------------------------->
 
-  <section id="banner" class="mt-0">
-    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-      
-      <!-- Indicadores (puntos) -->
+ <!-- SECCIÓN DESTACADA / BANNERS PROMOCIONALES -->
+  <section id="destacado" class="py-5 bg-dark">
+    <div class="container-fluid px-0">
+      <div id="carouselIndicators" class="carousel slide" data-bs-ride="carousel">
 
-      <div class="carousel-indicators">
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        <!-- Indicadores (puntitos inferiores) -->
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="0" class="active"
+            aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="1"
+            aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="2"
+            aria-label="Slide 3"></button>
+        </div>
+
+        <!-- Imágenes -->
+        <div class="carousel-inner rounded-3 shadow-lg overflow-hidden">
+          <div class="carousel-item active">
+            <img src="/assets/images/00_Burguer.jpeg" class="d-block w-100" alt="Banner 1">
+            <div class="carousel-caption d-none d-md-block">
+              <h5 class="fw-bold text-uppercase">Nueva Burger B-612°</h5>
+              <p class="text-light">El sabor del universo en una sola mordida.</p>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <img src="/assets/images/01_Petit.webp" class="d-block w-100" alt="Banner 2">
+            <div class="carousel-caption d-none d-md-block">
+              <h5 class="fw-bold text-uppercase">Combo Estelar</h5>
+              <p class="text-light">Burger + Papas + Bebida a un precio que despega.</p>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <img src="/assets/images/02_Box.webp" class="d-block w-100" alt="Banner 3">
+            <div class="carousel-caption d-none d-md-block">
+              <h5 class="fw-bold text-uppercase">Nueva Imagen</h5>
+              <p class="text-light">Una experiencia con empaque intergaláctico.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Botones de control -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselIndicators" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Anterior</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselIndicators" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Siguiente</span>
+        </button>
+
       </div>
-
-      <!-- Imágenes -->
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <img src="/assets/images/00_Petit.jpg" class="d-block w-100" alt="Banner 1">
-        </div>
-        <div class="carousel-item">
-          <img src="/assets/images/Pedidos_3volcanes.jpg" class="d-block w-100" alt="Banner 2">
-        </div>
-        <div class="carousel-item">
-          <img src="/assets/images/Vuelo612.png" class="d-block w-100" alt="Banner 3">
-        </div>
-      </div>
-
-      <!-- Botones de control -->
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Anterior</span>
-      </button>
-
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Siguiente</span>
-      </button>
     </div>
 
   </section>
 
-  <section>
-      
-    <div class="card">
-      <img src="..." class="card-img-top" alt="...">
+  <section id="menu" class="py-5 bg-light text-center">
+    <div class="container">
+      <h2 class="fw-bold mb-5 display-5">Nuestro Menú</h2>
 
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
+      <div class="row g-4">
+
+        <!-- Le Petit Burger -->
+        <div class="col-md-4 col-lg-3">
+          <div class="card h-100 shadow-sm border-0">
+            <img src="/assets/images/00_Petit.jpg" class="card-img-top" alt="Burger Clásica">
+            <div class="card-body">
+              <h5 class="card-title fw-bold">Le Petit</h5>
+              <p class="card-text text-muted">La original de la casa. Sencilla, balanceada y absolutamente deliciosa.</p>
+              <button class="btn btn-warning fw-bold" data-bs-toggle="modal" data-bs-target="#modalPetit">Ver más</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3 Volcanes Burger -->
+        <div class="col-md-4 col-lg-3">
+          <div class="card h-100 shadow-sm border-0">
+            <img src="/assets/images/burger_bbq.jpg" class="card-img-top" alt="Burger BBQ">
+            <div class="card-body">
+              <h5 class="card-title fw-bold">3 Volcanes</h5>
+              <p class="card-text text-muted">Ahumada y jugosa, con salsa BBQ artesanal y toques dulces irresistibles.</p>
+              <button class="btn btn-warning fw-bold" data-bs-toggle="modal" data-bs-target="#modalVolcanes">Ver más</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Vuelo 612 Burger -->
+        <div class="col-md-4 col-lg-3">
+          <div class="card h-100 shadow-sm border-0">
+            <img src="/assets/images/burger_doble.jpg" class="card-img-top" alt="Burger Doble">
+            <div class="card-body">
+              <h5 class="card-title fw-bold">Vuelo 612</h5>
+              <p class="card-text text-muted">Dos carnes, dos quesos, doble experiencia. No apta para terrícolas comunes.</p>
+              <button class="btn btn-warning fw-bold" data-bs-toggle="modal" data-bs-target="#modalVuelo">Ver más</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Domestikda Burger -->
+        <div class="col-md-4 col-lg-3">
+          <div class="card h-100 shadow-sm border-0">
+            <img src="/assets/images/burger_veggie.jpg" class="card-img-top" alt="Burger Veggie">
+            <div class="card-body">
+              <h5 class="card-title fw-bold">Domestikda</h5>
+              <p class="card-text text-muted">Con garbanzos, especias y frescura planetaria. Naturalmente deliciosa.</p>
+              <button class="btn btn-warning fw-bold" data-bs-toggle="modal" data-bs-target="#modalDomestikda">Ver más</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Burger Personalizable -->
+        <div class="col-md-12 mt-5">
+          <div class="card h-100 shadow-sm border-0 bg-warning text-dark py-4">
+            <div class="card-body">
+              <h4 class="fw-bold text-uppercase mb-3">Crea tu propio universo</h4>
+              <p class="mb-2">Todas nuestras burgers incluyen una base con pan artesanal y vegetales frescos.</p>
+              <p class="fw-semibold">Personalízala con:</p>
+              <ul class="list-unstyled mb-4">
+                <li>Carnes</li>
+                <li>Quesos</li>
+                <li>Salsas especiales</li>
+                <li>Salsas artesanales</li>
+              </ul>
+              <button class="btn btn-dark fw-bold mt-2" data-bs-toggle="modal" data-bs-target="#modalPersonalizada">
+                Ver opciones
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MODALES ------------------------------------------------------------------------------>
+
+  <!-- Modal Le Petit -->
+  <div class="modal fade" id="modalPetit" tabindex="-1" aria-labelledby="modalPetitLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content bg-dark text-light border-0 rounded-4 overflow-hidden text-center">
+        <div class="modal-header full-header justify-content-center">
+          <h5 class="modal-title fw-bold text-white" id="modalPetitLabel">Le Petit</h5>
+          <button type="button" class="btn-close btn-close-white position-absolute end-0 me-3" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body px-4 py-4">
+          <p class="mb-3 text-light-50">Pan artesanal, carne 150 g, queso cheddar, lechuga, tomate y nuestra salsa secreta.</p>
+          <p class="text-warning fw-semibold mb-0">El sabor original de B-612°, sin complicaciones.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 3 Volcanes -->
+  <div class="modal fade" id="modalVolcanes" tabindex="-1" aria-labelledby="modalVolcanesLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content bg-dark text-light border-0 rounded-4 overflow-hidden text-center">
+        <div class="modal-header full-header justify-content-center">
+          <h5 class="modal-title fw-bold text-white" id="modalVolcanesLabel">3 Volcanes</h5>
+          <button type="button" class="btn-close btn-close-white position-absolute end-0 me-3" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body px-4 py-4">
+          <p class="mb-3 text-light-50">Doble carne, queso fundido, cebolla caramelizada, toques de tocino y salsa BBQ artesanal.</p>
+          <p class="text-warning fw-semibold mb-0">Una erupción de sabor que conquista tu órbita.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Vuelo 612 -->
+  <div class="modal fade" id="modalVuelo" tabindex="-1" aria-labelledby="modalVueloLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content bg-dark text-light border-0 rounded-4 overflow-hidden text-center">
+        <div class="modal-header full-header justify-content-center">
+          <h5 class="modal-title fw-bold text-white" id="modalVueloLabel">Vuelo 612</h5>
+          <button type="button" class="btn-close btn-close-white position-absolute end-0 me-3" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body px-4 py-4">
+          <p class="mb-3 text-light-50">Doble carne, doble queso cheddar, toques de salsa espacial y vegetales frescos.</p>
+          <p class="text-warning fw-semibold mb-0">La experiencia interplanetaria definitiva.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Domestikda -->
+  <div class="modal fade" id="modalDomestikda" tabindex="-1" aria-labelledby="modalDomestikdaLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content bg-dark text-light border-0 rounded-4 overflow-hidden text-center">
+        <div class="modal-header full-header justify-content-center">
+          <h5 class="modal-title fw-bold text-white" id="modalDomestikdaLabel">Domestikda</h5>
+          <button type="button" class="btn-close btn-close-white position-absolute end-0 me-3" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body px-4 py-4">
+          <p class="mb-3 text-light-50">Burger de garbanzos, especias orientales, lechuga, tomate, cebolla morada y salsa verde.</p>
+          <p class="text-warning fw-semibold mb-0">Una opción galáctica, consciente y llena de sabor.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Personalizada -->
+  <div class="modal fade" id="modalPersonalizada" tabindex="-1" aria-labelledby="modalPersonalizadaLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content bg-dark text-light border-0 rounded-4 overflow-hidden text-center">
+        <div class="modal-header full-header justify-content-center">
+          <h5 class="modal-title fw-bold text-white" id="modalPersonalizadaLabel">Crea tu Propia Burger</h5>
+          <button type="button" class="btn-close btn-close-white position-absolute end-0 me-3" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body px-4 py-4">
+          <p class="mb-3 text-light-50">Elige tu pan, tipo de carne, queso favorito y acompáñala con nuestras salsas artesanales.</p>
+          <p class="text-warning fw-semibold mb-0">Tu universo, tu sabor. Diseña tu propia constelación de ingredientes.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- AQUI INICIA SECCIÓN EXPERIENCIA / TESTIMONIOS ----------------------------------------->
+
+  <section id="experiencia" class="experiencia-section py-5 text-center position-relative">
+    <div class="container">
+      <h2 class="fw-bold mb-5 display-5 text-light">La Experiencia B-612°</h2>
+      <p class="lead text-light mb-5">
+        Historias reales de quienes ya probaron el sabor de otro planeta
+      </p>
+
+      <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+
+          <!-- Testimonio 1 -->
+          <div class="carousel-item active">
+            <div class="card testimonial-card mx-auto" style="max-width: 600px;">
+              <div class="card-body">
+                <p class="card-text">“La mejor burger que he probado en mucho tiempo. Todo tiene un toque artesanal que se siente.”</p>
+                <div class="fw-bold text-uppercase text-rose mt-3">Camila R.</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonio 2 -->
+          <div class="carousel-item">
+            <div class="card testimonial-card mx-auto" style="max-width: 600px;">
+              <div class="card-body">
+                <p class="card-text">“La presentación, el empaque y el sabor. Todo parece sacado de otro planeta.”</p>
+                <div class="fw-bold text-uppercase text-rose mt-3">Juan P.</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonio 3 -->
+          <div class="carousel-item">
+            <div class="card testimonial-card mx-auto" style="max-width: 600px;">
+              <div class="card-body">
+                <p class="card-text">“El combo estelar es un clásico. Siempre pido el Vuelo 612, ¡brutal!”</p>
+                <div class="fw-bold text-uppercase text-rose mt-3">Andrés L.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Controles -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </button>
       </div>
     </div>
 
-
-
+    <div class="stars"></div>
   </section>
 
-  <br>
+  <!-- SECCIÓN CONTACTO ------------------------------------------------------->
+  <section id="contacto" class="contacto-section text-center position-relative py-5">
+    <div class="container position-relative">
+      <h2 class="fw-bold text-light display-5 mb-3">Contáctanos</h2>
+      <p class="text-light-emphasis mb-5 lead">
+        Nuestra base es una cocina oculta orbitando sobre Villamaría 🌌<br>
+        Enviamos señales (y burgers) solo a quienes saben dónde buscar.<br>
+        🚀 Pedidos a domicilio y recogidas secretas en Villamaría.
+      </p>
+
+      <!-- FORMULARIO / CANAL DE CONTACTO -->
+      <div class="contact-form mx-auto p-4 rounded-4 shadow-lg">
+        <form id="formContacto" action="#" method="post" class="text-start">
+          <div class="mb-3">
+            <label for="nombre" class="form-label text-light">Nombre del Comandante</label>
+            <input type="text" class="form-control" id="nombre" placeholder="Ej. Antoine" required>
+          </div>
+          <div class="mb-3">
+            <label for="mensaje" class="form-label text-light">Mensaje interestelar</label>
+            <textarea class="form-control" id="mensaje" rows="4" placeholder="Escribe tu señal..." required></textarea>
+          </div>
+          <div class="text-center mt-4">
+            <a href="https://wa.me/573001112233?text=Hola%20B-612°,%20quiero%20hacer%20un%20pedido%20🚀"
+              target="_blank" class="btn btn-rose fw-bold px-4 py-2">
+              🛰️ Enviar señal
+            </a>
+          </div>
+        </form>
+      </div>
+
+      <!-- REDES SOCIALES -->
+      <div class="social-links mt-5">
+        <h5 class="text-light mb-3 fw-semibold">Sigue nuestras transmisiones:</h5>
+        <div class="d-flex justify-content-center gap-4">
+          <a href="https://www.instagram.com/b612burgers" target="_blank" class="social-icon text-decoration-none">
+            <i class="bi bi-instagram"></i>
+          </a>
+          <a href="https://wa.me/573001112233" target="_blank" class="social-icon text-decoration-none">
+            <i class="bi bi-whatsapp"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="stars"></div>
+  </section>
+  
+
+
 
 
 

@@ -1,0 +1,285 @@
+body { padding-top: 70px; } /* Ajusta 70px según altura real del navbar */
+
+/* ===== HERO PRINCIPAL ======================================================================== */
+.hero {
+  background-color: #ffbd59; /* Fondo segun identidad visual ---------------------------------*/
+  height: 100vh;               /* Ocupa toda la pantalla ---------------------------------------*/
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #1a1a1a;            /* color texto -------------------------------------------------*/
+}
+
+.hero h1 {
+  font-size: 5rem;
+  letter-spacing: 2px;
+}
+
+.hero p {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.hero .btn {
+  border-radius: 50px;
+  transition: all 0.3s ease;
+}
+
+.hero .btn:hover {
+  background-color: #000;
+  color: #ffbd59;
+  transform: scale(1.05);
+}
+
+/* AQUI INICIA EL CARRUSEL =============================================================== */
+
+#destacado .carousel-item img {
+  height: 75vh;               /* controla altura visible del banner */
+  object-fit: cover;          /* recorta proporcionalmente */
+  filter: brightness(70%);    /* oscurece para mejorar legibilidad del texto */
+  transition: filter 0.5s ease;
+}
+
+#destacado .carousel-item:hover img {
+  filter: brightness(85%);    /* leve aclarado al pasar el mouse */
+}
+
+#destacado .carousel-caption {
+  bottom: 15%;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 1rem;
+  padding: 1.5rem;
+}
+
+/* Tamaño de titulo de banner */
+#destacado h5 {
+  font-size: 1.5rem;   
+  color:rgb(223, 212, 199);
+}
+
+/* Tamaño de párrafo de banner */
+#destacado p {
+  font-size: 1.0rem;
+  color: #fff;
+}
+
+/* AQUI INICIA LOS MODALES ================================================================= */
+
+.modal-content {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  border-radius: 1rem;
+}
+
+.modal-body p {
+  max-width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+.modal-header.full-header {
+  background-color: #ff6f61; /* franja rosa */
+  width: 100%;
+  border: none;
+  padding: 1rem 0.5rem;
+  position: relative;
+}
+
+.modal-header.full-header h5 {
+  width: 100%;
+  text-align: center;
+  color: #fff;
+}
+
+.modal-header.full-header .btn-close {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  filter: brightness(0) invert(1);
+}
+
+/* Animación sutil */
+.modal.fade .modal-dialog {
+  transform: scale(0.95);
+  transition: all 0.25s ease-in-out;
+}
+
+.modal.show .modal-dialog {
+  transform: scale(1);
+}
+
+/* AQUI SE INTEGRA EL COLOR ROSADO A LOS BOTONES =============================================00 */
+.btn-warning {
+  background-color: #ff6f61 !important;  /* rosado principal */
+  border-color: #ff6f61 !important;
+  color: #fff !important;
+  transition: all 0.3s ease;
+}
+
+.btn-warning:hover {
+  background-color: #e35d54 !important;  /* tono más oscuro al pasar el cursor */
+  border-color: #e35d54 !important;
+  color: #fff !important;
+  transform: translateY(-2px);
+}
+
+/* --------------------------------------- */
+
+/* === SECCIÓN EXPERIENCIA B-612° === */
+.experiencia-section {
+  background-color: #1d2f50;
+  color: #fff;
+  position: relative;
+  padding: 5rem 0;
+  overflow: hidden;
+}
+
+/* Fondo animado de estrellas */
+.stars {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("https://www.transparenttextures.com/patterns/stardust.png") repeat;
+  opacity: 0.25;
+  filter: brightness(1.4);
+  animation: starsMove 60s linear infinite;
+  z-index: 0;
+}
+
+@keyframes starsMove {
+  from { background-position: 0 0; }
+  to { background-position: 1000px 1000px; }
+}
+
+/* === TARJETAS DE TESTIMONIOS === */
+
+
+#testimonialCarousel .carousel-item {
+  transition: transform 1s ease, opacity 1s ease;
+}
+
+/* Flechas del carrusel */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  filter: invert(48%) sepia(100%) saturate(350%) hue-rotate(320deg) brightness(100%) contrast(97%);
+}
+
+/* área de click de flechas carrusel */
+.carousel-control-prev,
+.carousel-control-next {
+  width: 5%;
+}
+
+/* diseño de tarjetas */
+.testimonial-card {
+  background: rgba(120, 120, 120, 0.25) !important;
+  border-radius: 20px !important;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #fff !important;
+  box-shadow: 0 0 25px rgba(227, 94, 84, 0.301);
+}
+
+
+/* ------------------------------- */
+
+/* === SECCIÓN CONTACTO === */
+.contacto-section {
+  background-color: #1d2f50;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+.contact-form {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(8px);
+  border-radius: 20px;
+  max-width: 600px;
+  margin: 0 auto;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* Inputs */
+.form-control {
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-radius: 10px;
+  color: #fff;
+  padding: 0.75rem 1rem;
+}
+
+.form-control::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.form-control:focus {
+  background: rgba(255, 255, 255, 0.15);
+  outline: none;
+  box-shadow: 0 0 10px rgba(255, 111, 97, 0.6);
+}
+
+/* Botón principal */
+.btn-rose {
+  background-color: #ff6f61;
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+}
+
+.btn-rose:hover {
+  background-color: #ff8a7a;
+  transform: scale(1.05);
+}
+
+/* Redes sociales */
+.social-links {
+  margin-top: 3rem;
+}
+
+.social-icon {
+  font-size: 2rem;
+  color: #ff6f61;
+  transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+  color: #ffffff;
+  transform: scale(1.2);
+}
+
+/* Fondo estelar */
+.stars {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("https://www.transparenttextures.com/patterns/stardust.png") repeat;
+  background-size: contain;
+  opacity: 0.25;
+  animation: starsMove 60s linear infinite;
+  filter: brightness(1.5);
+  z-index: 0;
+}
+
+@keyframes starsMove {
+  from { background-position: 0 0; }
+  to { background-position: 1000px 1000px; }
+}
+
+/* Asegura que el contenido quede sobre el fondo */
+.contacto-section .container {
+  position: relative;
+  z-index: 1;
+  }
