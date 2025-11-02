@@ -64,6 +64,11 @@ body { padding-top: 70px; } /* Ajusta 70px según altura real del navbar */
   color: #fff;
 }
 
+.bg-b612-yellow {
+  background-color: #ffbd59 !important;
+  color: #1d1d1d !important; /* texto oscuro para contraste */
+  }
+
 /* AQUI INICIA LOS MODALES ================================================================= */
 
 .modal-content {
@@ -192,12 +197,16 @@ body { padding-top: 70px; } /* Ajusta 70px según altura real del navbar */
 
 /* === SECCIÓN CONTACTO === */
 .contacto-section {
-  background-color: #1d2f50;
-  color: #fff;
+  background-color: #292828;
+  color: #e35d54;
   position: relative;
   overflow: hidden;
   padding-top: 5rem;
   padding-bottom: 5rem;
+}
+
+.text-light {
+    margin-top: 3rem;
 }
 
 .contact-form {
@@ -230,15 +239,17 @@ body { padding-top: 70px; } /* Ajusta 70px según altura real del navbar */
 
 /* Botón principal */
 .btn-rose {
-  background-color: #ff6f61;
+  background: linear-gradient(90deg, #ffbd59 0%, #ff8a7a 100%) !important;
   color: #fff;
   border: none;
   border-radius: 30px;
   transition: all 0.3s ease;
 }
 
+
 .btn-rose:hover {
-  background-color: #ff8a7a;
+  background-color: #ff6f61;
+  color: #000 !important; /* Negro permanente */
   transform: scale(1.05);
 }
 
@@ -283,3 +294,34 @@ body { padding-top: 70px; } /* Ajusta 70px según altura real del navbar */
   position: relative;
   z-index: 1;
   }
+
+
+  /* === FOOTER === */
+.footer-section {
+  background-color: #ffbd59; /* Fondo dorado cálido */
+  color: #1d1d1d; /* Texto oscuro para contraste */
+  border-top: 2px solid rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+/* Texto poético */
+.footer-section p.fst-italic {
+  font-size: 1rem;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+/* Créditos */
+.footer-section p.fw-semibold {
+  font-size: 0.95rem;
+  color: #000;
+}
+
+/* Responsive */
+@media (max-width: 576px) {
+  .footer-section {
+    padding: 2rem 1rem;
+  }
+  .footer-section p {
+    font-size: 0.9rem;
+  }
+}

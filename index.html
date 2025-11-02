@@ -180,7 +180,7 @@
 
         <!-- Burger Personalizable -->
         <div class="col-md-12 mt-5">
-          <div class="card h-100 shadow-sm border-0 bg-warning text-dark py-4">
+          <div class="card h-100 shadow-sm border-0 bg-b612-yellow text-dark py-4">
             <div class="card-body">
               <h4 class="fw-bold text-uppercase mb-3">Crea tu propio universo</h4>
               <p class="mb-2">Todas nuestras burgers incluyen una base con pan artesanal y vegetales frescos.</p>
@@ -340,14 +340,15 @@
     <div class="stars"></div>
   </section>
 
-  <!-- SECCIÓN CONTACTO ------------------------------------------------------->
+  <!-- AQUI INICIA LA SECCIÓN CONTACTO ------------------------------------------------------->
+
   <section id="contacto" class="contacto-section text-center position-relative py-5">
     <div class="container position-relative">
-      <h2 class="fw-bold text-light display-5 mb-3">Contáctanos</h2>
-      <p class="text-light-emphasis mb-5 lead">
-        Nuestra base es una cocina oculta orbitando sobre Villamaría 🌌<br>
-        Enviamos señales (y burgers) solo a quienes saben dónde buscar.<br>
-        🚀 Pedidos a domicilio y recogidas secretas en Villamaría.
+      <h2 class="fw-bold display-5 mb-3">Contáctanos</h2>
+      <p class="text-light mb-5 lead">
+        Nuestra base es una cocina oculta orbitando sobre Villamaría. Enviamos experiencias <br> 
+        solo a quienes saben dónde buscar.<br> <br>
+        Pedidos a domicilio y recogidas secretas en Villamaría.
       </p>
 
       <!-- FORMULARIO / CANAL DE CONTACTO -->
@@ -355,29 +356,37 @@
         <form id="formContacto" action="#" method="post" class="text-start">
           <div class="mb-3">
             <label for="nombre" class="form-label text-light">Nombre del Comandante</label>
-            <input type="text" class="form-control" id="nombre" placeholder="Ej. Antoine" required>
+            <input type="text" class="form-control" id="nombre" placeholder="Ej. Andres" required>
           </div>
           <div class="mb-3">
             <label for="mensaje" class="form-label text-light">Mensaje interestelar</label>
             <textarea class="form-control" id="mensaje" rows="4" placeholder="Escribe tu señal..." required></textarea>
           </div>
           <div class="text-center mt-4">
-            <a href="https://wa.me/573001112233?text=Hola%20B-612°,%20quiero%20hacer%20un%20pedido%20🚀"
-              target="_blank" class="btn btn-rose fw-bold px-4 py-2">
-              🛰️ Enviar señal
-            </a>
+            <button id="btnEnviar" type="button" class="btn btn-rose">Enviar señal</button>
+
+            <script>
+            document.getElementById('btnEnviar').addEventListener('click', function(){
+              const nombre = encodeURIComponent(document.getElementById('nombre').value || 'Comandante');
+              const mensaje = encodeURIComponent(document.getElementById('mensaje').value || '');
+              const telefono = '573245567399';
+              const url = `https://wa.me/${telefono}?text=Hola%20B-612°,%20soy%20${nombre}.%20${mensaje}`;
+              window.open(url, '_blank', 'noopener');
+            });
+            </script>
           </div>
         </form>
       </div>
 
-      <!-- REDES SOCIALES -->
+      <!-- AQUI INICIA LAS REDES SOCIALES -->
+
       <div class="social-links mt-5">
         <h5 class="text-light mb-3 fw-semibold">Sigue nuestras transmisiones:</h5>
         <div class="d-flex justify-content-center gap-4">
           <a href="https://www.instagram.com/b612burgers" target="_blank" class="social-icon text-decoration-none">
             <i class="bi bi-instagram"></i>
           </a>
-          <a href="https://wa.me/573001112233" target="_blank" class="social-icon text-decoration-none">
+          <a href="https://wa.me/573245567399" target="_blank" class="social-icon text-decoration-none">
             <i class="bi bi-whatsapp"></i>
           </a>
         </div>
@@ -386,25 +395,24 @@
     <div class="stars"></div>
   </section>
   
+    <!-- FOOTER -->
+  <footer class="footer-section text-center text-dark py-4">
+    <div class="container">
+      <!-- Frase poética -->
+      <p class="mb-2 fst-italic">
+        “Desde un asteroide muy, muy pequeño... seguimos orbitando por buen sabor.” 🪐
+      </p>
 
+      <!-- Créditos -->
+      <p class="mb-0 fw-semibold">
+        © 2025 B-612° | Todos los derechos reservados
+      </p>
+    </div>
 
-
-
-
-
-
-
-
-
-
-  
-  <!-- FOOTER -->
-  <footer class="bg-dark text-center text-light py-4">
-    <p class="mb-0">© 2025 B-612° | Todos los derechos reservados</p>
+    <!-- Scripts -->
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
   </footer>
-
-  <script src="assets/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/js/main.js"></script>
 </body>
 </html>
 </html>
