@@ -71,23 +71,40 @@ body { padding-top: 70px; } /* Ajusta 70px según altura real del navbar */
   will-change: opacity;
 }
 
-/* Botón flotante centrado en cada slide */
+/* === BOTÓN FLOTANTE IZQUIERDO EN LOS BANNERS === */
 .btn-rose-floating {
   position: absolute;
-  bottom: 15%;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: #ffc107;
+  bottom: 12%;
+  left: 8%;
+  background-color: #fbbf24; /* Amarillo B-612° */
   color: #000;
-  font-weight: bold;
-  padding: 0.8rem 2rem;
+  font-weight: 700;
+  padding: 12px 32px;
   border-radius: 50px;
   text-transform: uppercase;
-  transition: transform 0.3s ease;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+  z-index: 10; /* sobre el overlay */
+  opacity: 0;
+  animation: fadeInLeft 1s ease forwards;
 }
 
 .btn-rose-floating:hover {
-  transform: translateX(-50%) scale(1.05);
+  background-color: #fff;
+  color: #111;
+  transform: scale(1.05);
+}
+
+/* Animación de aparición desde la izquierda */
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 /* Overlay oscuro para contraste */
