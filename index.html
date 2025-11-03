@@ -8,7 +8,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
-
+    <!-- Swiper CSS CARRUSEL -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   
   </head>
 
@@ -50,7 +51,12 @@
               <a class="nav-link" href="#contacto">Contacto</a>
             </li>
           </ul>
-          <a href="#pedido" class="btn btn-warning ms-lg-3 fw-bold">Pide Aquí</a>
+          <a href="https://wa.me/573245567399?text=¡Hola!%20Quiero%20hacer%20un%20pedido%20en%20B-612°"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-warning ms-lg-3 fw-bold btn-pedido">
+            Pide Aquí
+          </a>
         </div>
       </div>
     </nav>
@@ -67,62 +73,41 @@
 
   <!-- AQUI VA LA SECCIÓN DE CARRUSEL ------------------------------------------------------->
 
- <!-- SECCIÓN DESTACADA / BANNERS PROMOCIONALES -->
-  <section id="destacado" class="py-5 bg-dark">
-    <div class="container-fluid px-0">
-      <div id="carouselIndicators" class="carousel slide" data-bs-ride="carousel">
+    <!-- === SECCIÓN DESTACADO ========================================== -->
+  <section id="destacado" class="hero-section position-relative">
+    <div class="swiper heroSwiper">
+      <div class="swiper-wrapper">
 
-        <!-- Indicadores (puntitos inferiores) -->
-        <div class="carousel-indicators">
-          <button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="0" class="active"
-            aria-current="true" aria-label="Slide 1"></button>
-          <button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="1"
-            aria-label="Slide 2"></button>
-          <button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="2"
-            aria-label="Slide 3"></button>
+        <!-- Slide 1: Apertura de Agenda -->
+        <div class="swiper-slide" style="background-image: url('./assets/images/Banner Regresamos.jpg');">
+          <div class="overlay"></div>
+          <a href="https://wa.me/573001112233?text=Hola%20B-612°,%20quiero%20sumarme%20a%20la%20experiencia%20"
+            target="_blank"
+            class="btn-rose-floating">Reserva tu vuelo</a>
         </div>
 
-        <!-- Imágenes -->
-        <div class="carousel-inner rounded-3 shadow-lg overflow-hidden">
-          <div class="carousel-item active">
-            <img src="/assets/images/00_Burguer.jpeg" class="d-block w-100" alt="Banner 1">
-            <div class="carousel-caption d-none d-md-block">
-              <h5 class="fw-bold text-uppercase">Nueva Burger B-612°</h5>
-              <p class="text-light">El sabor del universo en una sola mordida.</p>
-            </div>
-          </div>
-
-          <div class="carousel-item">
-            <img src="/assets/images/01_Petit.webp" class="d-block w-100" alt="Banner 2">
-            <div class="carousel-caption d-none d-md-block">
-              <h5 class="fw-bold text-uppercase">Combo Estelar</h5>
-              <p class="text-light">Burger + Papas + Bebida a un precio que despega.</p>
-            </div>
-          </div>
-
-          <div class="carousel-item">
-            <img src="/assets/images/02_Box.webp" class="d-block w-100" alt="Banner 3">
-            <div class="carousel-caption d-none d-md-block">
-              <h5 class="fw-bold text-uppercase">Nueva Imagen</h5>
-              <p class="text-light">Una experiencia con empaque intergaláctico.</p>
-            </div>
-          </div>
+        <!-- Slide 2: Nuevo producto -->
+        <div class="swiper-slide" style="background-image: url('./assets/images/Banner\ Nuevo\ Prodycto.jpg');">
+          <div class="overlay"></div>
+          <a href="#menu" class="btn-rose-floating">Ver menú</a>
         </div>
 
-        <!-- Botones de control -->
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselIndicators" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Anterior</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselIndicators" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Siguiente</span>
-        </button>
+        <!-- Slide 3: Experiencia B-612° -->
+        <div class="swiper-slide" style="background-image: url('./assets/images/Banner StoryTelling.jpg');">
+          <div class="overlay"></div>
+          <a href="#experiencia" class="btn-rose-floating">Ver experiencias</a>
+        </div>
 
       </div>
-    </div>
 
+      <!-- Controles -->
+      <div class="swiper-pagination"></div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+    </div>
   </section>
+
+  <!-- AQUI INICIA EL MENU------------------------------------------------- -->
 
   <section id="menu" class="py-5 bg-light text-center">
     <div class="container">
@@ -133,7 +118,7 @@
         <!-- Le Petit Burger -->
         <div class="col-md-4 col-lg-3">
           <div class="card h-100 shadow-sm border-0">
-            <img src="/assets/images/00_Petit.jpg" class="card-img-top" alt="Burger Clásica">
+            <img src="/assets/images/01_PetitCd.jpg" class="card-img-top" alt="Burger Clásica">
             <div class="card-body">
               <h5 class="card-title fw-bold">Le Petit</h5>
               <p class="card-text text-muted">La original de la casa. Sencilla, balanceada y absolutamente deliciosa.</p>
@@ -145,7 +130,7 @@
         <!-- 3 Volcanes Burger -->
         <div class="col-md-4 col-lg-3">
           <div class="card h-100 shadow-sm border-0">
-            <img src="/assets/images/burger_bbq.jpg" class="card-img-top" alt="Burger BBQ">
+            <img src="/assets/images/02_3VolcanesCd.jpg" class="card-img-top" alt="Burger BBQ">
             <div class="card-body">
               <h5 class="card-title fw-bold">3 Volcanes</h5>
               <p class="card-text text-muted">Ahumada y jugosa, con salsa BBQ artesanal y toques dulces irresistibles.</p>
@@ -157,7 +142,7 @@
         <!-- Vuelo 612 Burger -->
         <div class="col-md-4 col-lg-3">
           <div class="card h-100 shadow-sm border-0">
-            <img src="/assets/images/burger_doble.jpg" class="card-img-top" alt="Burger Doble">
+            <img src="/assets/images/03_VueloCd.jpg" class="card-img-top" alt="Burger Doble">
             <div class="card-body">
               <h5 class="card-title fw-bold">Vuelo 612</h5>
               <p class="card-text text-muted">Dos carnes, dos quesos, doble experiencia. No apta para terrícolas comunes.</p>
@@ -169,7 +154,7 @@
         <!-- Domestikda Burger -->
         <div class="col-md-4 col-lg-3">
           <div class="card h-100 shadow-sm border-0">
-            <img src="/assets/images/burger_veggie.jpg" class="card-img-top" alt="Burger Veggie">
+            <img src="/assets/images/04_DomestikdaCd.jpg" class="card-img-top" alt="Burger Veggie">
             <div class="card-body">
               <h5 class="card-title fw-bold">Domestikda</h5>
               <p class="card-text text-muted">Con garbanzos, especias y frescura planetaria. Naturalmente deliciosa.</p>
@@ -413,6 +398,36 @@
     <script src="assets/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/main.js"></script>
   </footer>
+
+  <!-- AQUI ESTÁ JS DE CARUUSEL------------------------------------------------------ -->
+  <!-- Bootstrap (si lo usas) -->
+  <script src="assets/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <!-- Inicialización del carrusel -->
+  <script>
+    const swiper = new Swiper(".heroSwiper", {
+      loop: true,
+      effect: "fade",
+      speed: 1000,
+      autoplay: {
+        delay: 5000,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+  </script>
+
+
 </body>
 </html>
 </html>
