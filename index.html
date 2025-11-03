@@ -6,7 +6,6 @@
     <title>B-612°</title>
     <link rel="stylesheet" href="./styles/style.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
     <!-- Swiper CSS CARRUSEL -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
@@ -399,13 +398,11 @@
     </div>
 
     <!-- Scripts -->
-    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/main.js"></script>
   </footer>
 
   <!-- AQUI ESTÁ JS DE CARUUSEL------------------------------------------------------ -->
-  <!-- Bootstrap (si lo usas) -->
-  <script src="assets/js/bootstrap.bundle.min.js"></script>
 
   <!-- Swiper JS -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
@@ -413,34 +410,34 @@
   <!-- Inicialización del carrusel principal -->
   <script>
     const heroSwiper = new Swiper(".heroSwiper", {
-      loop: true,
-      effect: "fade",
-      speed: 1200, // transición más cinematográfica
-      autoplay: {
-        delay: 5000,
-        disableOnInteraction: false,
+    loop: true,
+    speed: 1000,
+    effect: "fade",
+    fadeEffect: { crossFade: true },
+    autoplay: {
+      delay: 5000,
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    on: {
+      init() {
+        const activeBtn = document.querySelector(".swiper-slide-active .btn-rose-floating");
+        if (activeBtn) activeBtn.classList.add("animate-btn");
       },
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
+      slideChangeTransitionStart() {
+        document.querySelectorAll(".btn-rose-floating").forEach(btn => btn.classList.remove("animate-btn"));
+        const activeSlide = document.querySelector(".swiper-slide-active .btn-rose-floating");
+        if (activeSlide) activeSlide.classList.add("animate-btn");
       },
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-      },
-      on: {
-        slideChangeTransitionStart() {
-          // Reinicia la animación del botón cuando cambia el slide
-          const activeSlide = document.querySelector(".swiper-slide-active .btn-rose-floating");
-          document.querySelectorAll(".btn-rose-floating").forEach(btn => btn.classList.remove("animate-btn"));
-          if (activeSlide) {
-            setTimeout(() => {
-              activeSlide.classList.add("animate-btn");
-            }, 300);
-          }
-        },
-      },
-    });
+    },
+  });
   </script>
 
 

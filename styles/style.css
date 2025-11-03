@@ -50,67 +50,52 @@ body { padding-top: 70px; } /* Ajusta 70px según altura real del navbar */
 /* AQUI INICIA EL CARRUSEL =============================================================== */
 
 /* === SECCIÓN HERO / DESTACADOS === */
-/* === SECCIÓN HERO / DESTACADOS === */
 .hero-section {
-  width: 100%;
-  height: 90vh; /* 🔹Antes 100vh — ahora se ve más contenido */
   position: relative;
+  width: 100%;
+  height: 100vh;
   overflow: hidden;
-  background: #000;
 }
 
-/* Swiper */
-.hero-section .swiper {
+.swiper {
   width: 100%;
   height: 100%;
 }
 
-/* === SLIDES === */
 .swiper-slide {
   background-size: cover;
-  background-position: center center;
+  background-position: center;
   background-repeat: no-repeat;
   position: relative;
-  transition: transform 6s ease-out, background-position 6s ease-out;
+  transition: opacity 1s ease-in-out !important; /* seguro en Safari */
+  will-change: opacity;
 }
 
-/* Efecto leve de zoom */
-.swiper-slide-active {
-  transform: scale(1.05);
-}
-
-/* Capa oscura */
-.hero-section .overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.35);
-  z-index: 1;
-}
-
-/* === BOTÓN FLOTANTE === */
+/* Botón flotante centrado en cada slide */
 .btn-rose-floating {
   position: absolute;
-  bottom: 40px;
-  left: 40px;
-  background-color: #ffbd59;
+  bottom: 15%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #ffc107;
   color: #000;
-  font-weight: 600;
-  padding: 0.75rem 1.75rem;
-  border-radius: 30px;
-  text-decoration: none;
-  z-index: 2;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+  font-weight: bold;
+  padding: 0.8rem 2rem;
+  border-radius: 50px;
+  text-transform: uppercase;
+  transition: transform 0.3s ease;
 }
 
 .btn-rose-floating:hover {
-  background-color: #ff6f61;
-  color: #fff;
-  transform: translateY(-3px);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+  transform: translateX(-50%) scale(1.05);
+}
+
+/* Overlay oscuro para contraste */
+.swiper-slide::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.3);
 }
 
 /* === CONTROLES SWIPER === */
@@ -138,10 +123,10 @@ body { padding-top: 70px; } /* Ajusta 70px según altura real del navbar */
   opacity: 1;
 }
 
-/* === RESPONSIVE === */
+/* === RESPONSIVE ================================================= */
 @media (max-width: 1024px) {
   .hero-section {
-    height: 75vh; /* 🔹Antes 80vh */
+    height: 75vh;
   }
 
   .swiper-slide {
@@ -160,7 +145,7 @@ body { padding-top: 70px; } /* Ajusta 70px según altura real del navbar */
 
 @media (max-width: 768px) {
   .hero-section {
-    height: 60vh; /* 🔹Antes 70vh */
+    height: 60vh;
   }
 
   .swiper-slide {
@@ -178,7 +163,7 @@ body { padding-top: 70px; } /* Ajusta 70px según altura real del navbar */
 
 @media (max-width: 480px) {
   .hero-section {
-    height: 55vh; /* 🔹Antes 65vh — se ve más contenido por debajo */
+    height: 55vh;
   }
 
   .swiper-slide {
