@@ -61,13 +61,17 @@
     </nav>
   </header>
 
-    <!-- HERO PRINCIPAL -->
-  <section id="inicio" class="hero d-flex align-items-center text-center text-dark">
-    <div class="container">
-      <h1 class="display-1 fw-bold mb-3">B-612°</h1>
-      <p class="lead fs-3 mb-4">Cocina oculta, sabor visible</p>
-      <a href="#menu" class="btn btn-dark btn-lg fw-bold px-5 py-3">Descubre el sabor</a>
+    <!-- HERO PRINCIPAL --------------------------------------------------------------------------->
+    <section id="hero" class="hero-b612-cinematic">
+    <div class="solar-orbit"></div>
+    <div class="hero-content">
+      <h1 class="hero-title">B-612°</h1>
+      <p class="hero-subtitle">Cocina oculta. Sabor visible.</p>
+      <p class="hero-quote">Nacimos en un pequeño planeta<br> donde cada bocado cuenta una historia.</p>
+      <a href="#menu" class="btn-hero">Descubre el sabor</a>
+      <p class="hero-tagline">Lo esencial se saborea con el alma.</p>
     </div>
+    <canvas id="solarParticles"></canvas>
   </section>
 
   <!-- AQUI VA LA SECCIÓN DE CARRUSEL ------------------------------------------------------->
@@ -163,9 +167,8 @@
         </div>
 
         <!-- Burger Personalizable -->
-        <div class="col-md-12 mt-5">
-          <div class="card h-100 shadow-sm border-0 bg-b612-yellow text-dark py-4">
-            <div class="card-body">
+        <div class="card bg-b612-galaxy">
+          <div class="card-body">
               <h4 class="fw-bold text-uppercase mb-3">Crea tu propio universo</h4>
               <p class="mb-2">Todas nuestras burgers incluyen una base con pan artesanal y vegetales frescos.</p>
               <p class="fw-semibold">Personalízala con:</p>
@@ -288,8 +291,8 @@
           <div class="carousel-item active">
             <div class="card testimonial-card mx-auto" style="max-width: 600px;">
               <div class="card-body">
-                <p class="card-text">“La mejor burger que he probado en mucho tiempo. Todo tiene un toque artesanal que se siente.”</p>
-                <div class="fw-bold text-uppercase text-rose mt-3">Camila R.</div>
+                <p class="card-text">“Somos tus fans. Las amamos.”</p>
+                <div class="fw-bold text-uppercase text-rose mt-3">Susana S.</div>
               </div>
             </div>
           </div>
@@ -298,8 +301,8 @@
           <div class="carousel-item">
             <div class="card testimonial-card mx-auto" style="max-width: 600px;">
               <div class="card-body">
-                <p class="card-text">“La presentación, el empaque y el sabor. Todo parece sacado de otro planeta.”</p>
-                <div class="fw-bold text-uppercase text-rose mt-3">Juan P.</div>
+                <p class="card-text">“Super deliciosas, parecen en relidad de otro planeta.”</p>
+                <div class="fw-bold text-uppercase text-rose mt-3">Mariana R.</div>
               </div>
             </div>
           </div>
@@ -308,8 +311,8 @@
           <div class="carousel-item">
             <div class="card testimonial-card mx-auto" style="max-width: 600px;">
               <div class="card-body">
-                <p class="card-text">“El combo estelar es un clásico. Siempre pido el Vuelo 612, ¡brutal!”</p>
-                <div class="fw-bold text-uppercase text-rose mt-3">Andrés L.</div>
+                <p class="card-text">“!Felicidades! que hamburguesa tan deliciosa, debería tener un punto físico”</p>
+                <div class="fw-bold text-uppercase text-rose mt-3">Carolina G.</div>
               </div>
             </div>
           </div>
@@ -440,6 +443,44 @@
   });
   </script>
 
+  <script>
+  const canvas = document.getElementById('solarParticles');
+  const ctx = canvas.getContext('2d');
+  let particles = [];
+
+  function resizeCanvas() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  }
+  resizeCanvas();
+  window.addEventListener('resize', resizeCanvas);
+
+  for (let i = 0; i < 80; i++) {
+    particles.push({
+      x: Math.random() * canvas.width,
+      y: Math.random() * canvas.height,
+      r: Math.random() * 1.8 + 0.5,
+      dx: (Math.random() - 0.5) * 0.3,
+      dy: (Math.random() - 0.5) * 0.3,
+    });
+  }
+
+  function drawParticles() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    particles.forEach(p => {
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      ctx.fillStyle = 'rgba(255,255,255,0.5)';
+      ctx.fill();
+      p.x += p.dx;
+      p.y += p.dy;
+      if (p.x < 0 || p.x > canvas.width) p.dx *= -1;
+      if (p.y < 0 || p.y > canvas.height) p.dy *= -1;
+    });
+    requestAnimationFrame(drawParticles);
+  }
+  drawParticles();
+  </script>
 
 </body>
 </html>
